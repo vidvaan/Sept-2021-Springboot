@@ -47,7 +47,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public List<Employee> findByEname(String ename) {
-		return employeeDAO.findByEname(ename);
+		//return employeeDAO.findByEname(ename);
+		return employeeDAO.findByEnameUsingHQL(ename);
 	}
 
 }

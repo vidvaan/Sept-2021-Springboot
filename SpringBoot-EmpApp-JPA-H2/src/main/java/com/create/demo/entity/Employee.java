@@ -5,10 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table
+@NamedQueries(value = {
+		@NamedQuery(name = "Employee.getByEname", query = "select e from Employee e where e.ename = :ename"),
+		@NamedQuery(name = "Employee.getByEsal", query = "select e from Employee e where e.esal = :esal")})
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,7 +63,5 @@ public class Employee {
 	public void setEsal(Double esal) {
 		this.esal = esal;
 	}
-	
-	
 
 }
