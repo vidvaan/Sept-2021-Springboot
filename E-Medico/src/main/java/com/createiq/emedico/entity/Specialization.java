@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,5 +29,6 @@ public class Specialization {
 	private Integer id;
 	private String specializationName;
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "specializations")
+	@JsonIgnore
 	private List<Doctor> doctors;
 }
