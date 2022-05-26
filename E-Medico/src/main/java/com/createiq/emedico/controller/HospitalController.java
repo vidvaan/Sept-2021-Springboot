@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,7 @@ import com.createiq.emedico.service.HospitalService;
 @RestController
 @RequestMapping("/api/hospital/")
 public class HospitalController {
+	
 	@Autowired
 	private HospitalService hospitalService;
 
@@ -34,7 +36,7 @@ public class HospitalController {
 	}
 
 	@GetMapping("/findById/{hid}")
-	public ResponseEntity<Hospital> findById(Integer hid) {
+	public ResponseEntity<Hospital> findById(@PathVariable Integer hid) {
 		return ResponseEntity.status(HttpStatus.OK).body(hospitalService.findById(hid));
 	}
 
