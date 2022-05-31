@@ -51,7 +51,7 @@ public class HospitalController {
 	}
 
 	@DeleteMapping("/deleteById/{hid}")
-	public ResponseEntity<?> deleteById(Integer hid) {
+	public ResponseEntity<?> deleteById(@PathVariable Integer hid) {
 		hospitalService.deleteById(hid);
 		Map<String, String> responseMap = new HashMap<String, String>() {
 			{

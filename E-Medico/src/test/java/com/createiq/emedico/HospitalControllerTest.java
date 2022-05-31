@@ -23,7 +23,7 @@ import com.createiq.emedico.entity.Hospital;
 import com.createiq.emedico.service.HospitalService;
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(HospitalController.class)
-public class EmedicoHospitalControllerTest {
+public class HospitalControllerTest {
 	
 	 @MockBean
 	 HospitalService hospitalService;
